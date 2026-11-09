@@ -1,6 +1,6 @@
 # Curated Office Add-in resources
 
-**Last checked: 2026-11-10.** Links, not copies. Prioritize official contracts over examples and anecdotes. Verify host (Word), platform (Mac), current Word build, API requirement set, last updated date, and issue status before relying on an item.
+**Last checked: 2026-11-10.** Links, not copies. Prioritize official contracts over examples and anecdotes. See [source verification notes](SOURCE-VERIFICATION.md) for direct link/status checks and access limitations. Verify host (Word), platform (Mac), current Word build, API requirement set, last updated date, and issue status before relying on an item.
 
 ## Authoritative platform and API documentation
 
@@ -74,7 +74,7 @@
 
 ## Excluded or deferred
 
-- [Office Add-ins Development Kit](https://github.com/OfficeDev/Office-Addins-Development-Kit): no reason to replace current project tooling while under phaseout; check status before adoption.
+- [Office Add-ins Development Kit](https://github.com/OfficeDev/OfficeAddinDevKit): available Microsoft tool; adoption deferred until current project needs and support are reviewed. Do not confuse Visual Studio add-in project deprecation with this VS Code kit.
 - Microsoft 365 Agents Toolkit / SSO examples: not relevant to current local-only P0 faults.
 - COM/VSTO and Windows-specific WAM/WebView2 fixes: **different architecture**; do not apply to Mac Word Office.js.
 - Arbitrary third-party MCP servers promising "Word editing": editing DOCX in filesystem is not the same as debugging a live Office.js task pane.
