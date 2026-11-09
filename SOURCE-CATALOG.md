@@ -58,7 +58,7 @@
 | [#6973](https://github.com/OfficeDev/office-js/issues/6973) | Sideloaded Word ribbon add-in disappears after restart on Mac/Windows | **Open / under investigation**; strong analogy, not local root-cause proof |
 | [#6597](https://github.com/OfficeDev/office-js/issues/6597) | Office Add-ins loading spinner and empty store for work accounts | **Open**; account-type specific |
 | [#4078](https://github.com/OfficeDev/office-js/issues/4078) | getOOXML nondeterministic `w14:paraId` | **Closed July 2026** (Microsoft says fixed); our observed `w:rsidR` is different |
-| [#6703](https://github.com/OfficeDev/office-js/issues/6703) | insertFileFromBase64 hierarchical list indentation lost | **Closed June 2026 / fix deployed**; import fidelity regression suite |
+| [#6703](https://github.com/OfficeDev/office-js/issues/6703) | insertFileFromBase64 hierarchical list indentation lost | **Closed June 2026 / offending change turned off per maintainer comment**; recheck import fidelity on the target build |
 | [#2225](https://github.com/OfficeDev/office-js/issues/2225) | Range.expandTo may add Undo history units | **Closed not planned** (older Word on web report) |
 | [#1827](https://github.com/OfficeDev/office-js/issues/1827) | Request for an Office.js UndoRecord equivalent | Closed May 2021; Microsoft said it had no plans to add the capability at that time. This is a historical response, not a current roadmap statement; do not promise one Undo step. |
 | [#6952](https://github.com/OfficeDev/office-js/issues/6952) | Store add-in error (primarily Windows) | **Fixed Sept 2026**; not same as Mac dev sideload |

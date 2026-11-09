@@ -53,4 +53,4 @@ Do not store real thesis text, patient data, private documents, tokens, API keys
 
 ## Current skill provenance
 
-The existing authored skill lives at `.agents/skills/office-word-addin-engineering/SKILL.md` and `.agents/skills/office-word-addin-engineering/agents/openai.yaml` on the parent Office tooling branch. Include those **unchanged** in any standalone knowledge repository, validate their discovery, and revise their runbook links to be portable. Do not confuse "YAML parsed" with "Codex runtime discovered the skill".
+The authored skill originated at `.agents/skills/office-word-addin-engineering/SKILL.md` and its companion `agents/openai.yaml` on the parent Office tooling branch. The standalone copy preserves its guidance while replacing project-only runbook paths with portable links. Codex discovery is checked separately; valid YAML alone is not proof that a runtime discovered the skill.
