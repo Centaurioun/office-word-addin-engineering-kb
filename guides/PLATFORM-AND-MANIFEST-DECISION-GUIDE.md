@@ -2,6 +2,16 @@
 
 **Verified: 2026-11-10. Evidence grade A:** Microsoft Learn primary documentation and Microsoft-maintained sample code. **Portable guidance; not an ETKPlus manifest migration request.**
 
+## Production readiness and ribbon-specific nuance (rechecked 2026-11-10)
+
+**Current authoritative caveat:** [Microsoft Yeoman generator overview](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/yeoman-generator-overview) still describes unified JSON for **Word, Excel and PowerPoint as preview**, explicitly advising against its use for production. The [unified manifest platform table](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/unified-manifest-overview) confirms Mac 16.103+ installation compatibility but **does not itself make the entire workflow production-GA**. XML add-in-only remains a supported production format. A new ribbon can be implemented in the existing XML via `VersionOverrides/CustomTab` and groups; no migration is required just to obtain a professional ribbon.
+
+**Ribbon limit:** Microsoft's [add-in commands guide](https://learn.microsoft.com/en-us/office/dev/add-ins/design/add-in-commands) explicitly allows **one custom core tab** per add-in. Other commands can be grouped under built-in Word tabs. Function commands and `ShowTaskpane` are different actions.
+
+**2026 release caveat:** [Office.addin.showAsTaskpane](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/show-hide-add-in) is no longer effective for Marketplace-published add-ins as of 2026-02-23; sideloaded/centrally deployed add-ins remain supported. Therefore do not base Marketplace UX entirely on a shared-runtime `showAsTaskpane()` deep-link solution. The official first-class `ShowTaskpane` action may be used for opening an actual pane, with verified route/navigation mechanics.
+
+See [Ribbon-first architecture](RIBBON-FIRST-WORD-ADDIN-ARCHITECTURE.md) and [ETKPlus gap analysis](ETKPLUS-CAPABILITIES-GAPS-ROADMAP.md).
+
 ## Decision in one minute
 
 The installed **ETKPlus × TransTools** Word task-pane add-in is an **Office.js web application with an XML add-in-only manifest**. The manifest identifies the add-in to Word and points to HTTPS-served task-pane resources; the JavaScript executing in the Word webview performs Office.js work. The **unified manifest** is an optional *different packaging/distribution model*, not a solution to stale JS, Add-in Error or FILE-07. Keep the current working XML GUID and port until a separate compatibility/deployment project is approved.
