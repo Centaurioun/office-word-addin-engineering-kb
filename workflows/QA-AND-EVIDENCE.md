@@ -2,6 +2,8 @@
 
 Goal: reproducible *real Word* evidence without modifying a user's documents or overclaiming from mocks. Applicable to any Word Office.js add-in.
 
+**Taskpane startup UI selection:** See [Word Mac delayed add-in tile](../troubleshooting/WORD-MAC-DELAYED-ADDIN-TILE.md). In the observed Word menu, wait roughly 5–10 s for the own add-in's green W tile; **do not click the generic purple Add-ins item**. Confirm actual title and runtime build identity before feature tests. Record wrong tile clicks as setup errors, not Word feature FAILs.
+
 ## Before running
 
 1. Verify actual project worktree, HEAD SHA, uncommitted changes, compiled JS build identity, served URL/port and Word/macOS/Office.js API requirement set.
