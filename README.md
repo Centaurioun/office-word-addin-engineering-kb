@@ -23,13 +23,20 @@ This directory is **portable**: it may be copied to a new standalone repository 
 | Stale preview still active, confirmation fails or runs twice | [Preview and confirmation security](troubleshooting/PREVIEW-CONFIRMATION-SECURITY.md) |
 | Undo/Redo unavailable or multiple history units; ranges miss terminal matches | [Undo, Redo and Range](troubleshooting/UNDO-REDO-RANGE.md) |
 | DOCX imports but styles/table/numbering drift | [DOCX import fidelity](troubleshooting/DOCX-IMPORT-INTEGRITY.md) |
+| Need to choose XML vs unified JSON app package, platform compatibility | [Platform & manifest decision guide](guides/PLATFORM-AND-MANIFEST-DECISION-GUIDE.md) |
+| Search Microsoft Word working samples by problem type | [OfficeDev Word samples atlas](guides/OFFICIAL-WORD-SAMPLES-ATLAS.md) |
+| Add-in Error blocks all feature tests; isolate Word host vs application | [Official Hello World canary runbook](troubleshooting/OFFICIAL-HELLO-WORLD-CANARY.md) |
 | Need authoritative official documents or tools | [Curated source catalog](SOURCE-CATALOG.md) |
 | Repeatable evidence and QA hygiene | [QA evidence workflow](workflows/QA-AND-EVIDENCE.md) |
 | "Is Word running the new code?" | [Build identification and versioning](workflows/VERSIONING-AND-REPRODUCIBILITY.md) |
 | Install/consume a shared Codex skill, MCP, tools | [Agent and skill integration](workflows/AGENT-AND-SKILL-INTEGRATION.md) |
 | Move to an independent GitHub repository | [Codex migration prompt](prompts/CODEX-REPOSITORY-MIGRATION.md) |
 
-## Case statuses on 2026-11-10
+## Historical case statuses (initial 2026-11-10 snapshot)
+
+**Not the latest state.** Later on 2026-11-10, a user-confirmed DOCX append worked on ETK dev.005, dev.007 loaded in one session but returned Add-in Error in a later smoke run; 45-feature survey then yielded 1 startup FAIL and 44 BLOCKED because the pane never opened. See the timestamped [ETKPlus case history](cases/ETKPlus/README.md). Earlier data below remain as historical evidence, not the current P0 verdict.
+
+### Earlier 2026-11-10 snapshot
 
 - **FILE-07:** FAIL — an untouched 208-character target is rejected before confirmation. Three text hashes match; three same-length OOXML hashes differ. First observed differing attribute: `w:rsidR`. **Not yet a proven sole root cause.**
 - **FILE-08:** execution-time rejection PASS on changed target; early preview-button invalidation FAIL.
