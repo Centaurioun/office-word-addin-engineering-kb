@@ -71,3 +71,7 @@ The authored skill originated at `.agents/skills/office-word-addin-engineering/S
 ## Cross-harness and Microsoft 365 Agents Toolkit
 
 [Toolkit Office Add-in support and Copilot/Codex skill handoff](guides/M365-AGENTS-TOOLKIT-FOR-WORD-ADDINS.md) — includes what it can help with, what still requires native Word, and how to reconcile local and central skill versions without discarding changes.
+
+## Verified local UI automation instruction (2026-11-10)
+
+[Word Mac delayed green-W add-in tile](troubleshooting/WORD-MAC-DELAYED-ADDIN-TILE.md): an operator-observed Add-ins list delay can cause Codex/CUA to click the wrong purple generic Add-ins entry. Record the wait/identification flow and exact Word build for future agent testing; not a general Microsoft guarantee.
