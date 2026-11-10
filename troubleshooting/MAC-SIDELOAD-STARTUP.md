@@ -3,6 +3,10 @@
 **Scope:** Word for Mac XML-manifest developer sideload, local HTTPS task pane. Use for unrelated future add-ins too.
 
 **Applicability / last checked (2026-11-10):** Word for Mac, Office.js add-ins. Exact Word/Office build for this case: not recorded in the source evidence; do not generalize to other builds without retesting.
+## Human-observed ETKPlus launch tile delay (2026-11-10)
+
+**Do not click the purple generic Add-ins item just because it appears first.** On this user's Word installation the actual add-in entry with a **green W** icon appears in the Add-ins list after about **5–10 seconds**. The safe automation sequence is **open Add-ins → wait → inspect again → identify expected add-in name + green W → click only the actual own add-in → verify the real taskpane/build identity**. If absent, log not-found; do not explore Marketplace or install/re-sideload another add-in. This is operator evidence, not a universal Word UI guarantee. Full [step-by-step runbook](WORD-MAC-DELAYED-ADDIN-TILE.md).
+
 ## Symptom matrix
 
 | Symptom | Top hypotheses | First non-destructive measurement |
