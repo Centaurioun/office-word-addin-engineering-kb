@@ -7,6 +7,12 @@
 
 **Do not click the purple generic Add-ins item just because it appears first.** On this user's Word installation the actual add-in entry with a **green W** icon appears in the Add-ins list after about **5–10 seconds**. The safe automation sequence is **open Add-ins → wait → inspect again → identify expected add-in name + green W → click only the actual own add-in → verify the real taskpane/build identity**. If absent, log not-found; do not explore Marketplace or install/re-sideload another add-in. This is operator evidence, not a universal Word UI guarantee. Full [step-by-step runbook](WORD-MAC-DELAYED-ADDIN-TILE.md).
 
+## 2026-11-10: Correct add-in tile appears but DISABLED
+
+[ETKPlus host activation issue #11](https://github.com/Centaurioun/ETKPlus-TransTools/issues/11): Word for Mac 16.116 showed the correctly named green-W "Word Araçlarım (MVP)" tile **disabled** after about 5.5 seconds; the formerly visible Home > Word Araçlarım > Paneli Aç command was also absent. Local HTTPS assets returned 200 and installed WEF manifest SHA matched the expected XML, but **no active taskpane JavaScript identity** was observed. The same dev.007 build opened in earlier Word sessions. Treat this as an **intermittent PRE_ACTIVATION_DISABLED host-stage problem**, not 15 broken product features or a proved JS load error.
+
+Safe next steps: record Word editable-document state, exact tile enabled flag and missing Home command as screenshot/AX evidence; confirm the Word WEF manifest IDs/URLs and server's owner and build hashes read-only; conduct **one normal Word quit/reopen** with owned HTTPS server kept running **only after unsaved user documents are protected**; classify the stage. If still disabled, investigate Office host logs/Word XML validation and consider an isolated independent Hello World Word canary, not speculative product edits. **No blind cache/WEF clearing:** [Microsoft guidance](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache) says this can remove *all* sideloaded add-ins and warns not to delete individual cache manifest files. Explicit owner consent and backups are needed before a reset. No alternative purple Add-ins click or unrestricted repeated retries.
+
 ## Symptom matrix
 
 | Symptom | Top hypotheses | First non-destructive measurement |
