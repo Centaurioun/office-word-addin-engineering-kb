@@ -2,6 +2,10 @@
 
 **2026-11-10 architecture audit (source-inspected, not live Word QA).** Under review: `mac-word-mvp/manifest.xml`, `public/taskpane.html`, source `src/core/*`, `src/office/*`, 45-feature [Issue #6](https://github.com/Centaurioun/ETKPlus-TransTools/issues/6). This is an **inventory and proposed roadmap**, not proof every declared button works.
 
+## Revised prioritization after six-cycle review (2026-11-10)
+
+**Product decision:** Keep both **ribbon dropdown/group entry points** and an enduring **right taskpane**, and keep **XML** for now. Do not remove or move existing tools before real Word smoke verification. A new Feature Registry and shared dispatcher are architectural seams only; they must not delay current P0 recovery. Source of truth: [Six-cycle product design](SIX-CYCLE-PRODUCT-REFINEMENT-2026-11-10.md), [Scrum backlog](../workflows/SCRUM-REFINED-PRODUCT-BACKLOG.md). Current code remains unchanged.
+
 ## Current implementation architecture
 
 - A single XML manifest maps **Word Home > Word Araçlarım > Paneli Aç** to `ShowTaskpane`. It has **no dedicated ETKPlus custom tab** and no full ribbon command groups.
