@@ -17,6 +17,20 @@
 | [Load/write Office Open XML](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) | Rich OOXML sample content: formatted text, table, image, drawing, content control, chart, SmartArt | Fixture design for table/image/content-control style fidelity; compare OOXML structure | README prefers typed Word APIs where available; older Visual Studio sample |
 | [Automatically label document on open](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-label-on-open) | `OnDocumentOpened` event handler changes header text on open | A **separate future admin-deployment** use case | **Not** a Mac sideload canary: sample applicability is Word Windows/web, and README states event activation requires administrator central deployment (not sideload or Marketplace) |
 
+## Additional shared-runtime and productivity references — 2026-11-10
+
+| Microsoft example | Applicability | ETKPlus use / limitation |
+|---|---|---|
+| [Office keyboard shortcuts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-keyboard-shortcuts) | Includes Word, Mac minimum build and SharedRuntime setup | Pilot small set of shortcuts for read-only academic scan and navigation, with collision checks; not a replacement for ribbon |
+| [Manage ribbon and task pane UI / shared runtime](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-shared-runtime-scenario) | **Excel sample**, not a working Word baseline | Architectural reference for common command state, ribbon enablement and pane show/hide; **port only after Word requirement-set and Mac actual test** |
+| [Shared runtime global data](https://learn.microsoft.com/en-us/office/dev/add-ins/excel/configure-your-add-in-to-use-a-shared-runtime) | Excel-focused tutorial with Word-capable shared-runtime guidance | Shows runtime manifest wiring; ETK must validate its XML `FunctionFile`/Taskpane Url and build output |
+| [OfficeDev official sample index](https://learn.microsoft.com/en-us/office/dev/add-ins/overview/office-add-in-code-samples) | Cross-host catalog | Discovery entry point; filter by `Word on Mac` applicability |
+| [Ribbon custom tab visibility](https://learn.microsoft.com/en-us/office/dev/add-ins/design/show-hide-controls-custom-tab) | Word support conditional on requirement sets | Optional future de-cluttering; menu-item visibility differs from group/button visibility |
+| [Word tracked change APIs](https://learn.microsoft.com/en-us/office/dev/add-ins/word/manage-tracked-changes) | Word platform, requirement-dependent | Academic editor can inspect tracked revisions; don't equate available read API with safe programmatic redlining |
+| [Word state/settings persistence](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/persisting-add-in-state-and-settings) | Word `Document.settings`, browser storage | Restore last pane view and user profiles without leaking thesis text; document vs user lifecycle distinctions |
+
+**Critical compatibility caveat:** Microsoft's [Show/hide taskpane](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/show-hide-add-in) says `Office.addin.showAsTaskpane()` is ignored for Marketplace-published add-ins since 2026-02-23. Don't treat an Excel ribbon demonstration or sideloaded development success as a Word Marketplace release guarantee.
+
 ## High-value source inspections
 
 ### Word Hello World: exact observations
