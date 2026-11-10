@@ -67,3 +67,7 @@ Do not store real thesis text, patient data, private documents, tokens, API keys
 ## Current skill provenance
 
 The authored skill originated at `.agents/skills/office-word-addin-engineering/SKILL.md` and its companion `agents/openai.yaml` on the parent Office tooling branch. The standalone copy preserves its guidance while replacing project-only runbook paths with portable links. Codex discovery is checked separately; valid YAML alone is not proof that a runtime discovered the skill.
+
+## Cross-harness and Microsoft 365 Agents Toolkit
+
+[Toolkit Office Add-in support and Copilot/Codex skill handoff](guides/M365-AGENTS-TOOLKIT-FOR-WORD-ADDINS.md) — includes what it can help with, what still requires native Word, and how to reconcile local and central skill versions without discarding changes.
