@@ -19,6 +19,8 @@ Use this skill for Microsoft Word Office.js add-ins across projects, including t
 8. Use Safari Web Inspector only for observing/debugging the task-pane runtime. Never bypass application confirmation, preview validation, or document safety gates from the console.
 9. Record each issue using the [troubleshooting template](../../../templates/TROUBLESHOOTING-CASE-TEMPLATE.md): symptom, environment/version, evidence, competing causes, sources, safe diagnosis, fix, regression, and outcome. Include the applicable Word/Office version and last checked date; write `unknown` when evidence is unavailable.
 
+For platform/manifest questions first read [platform and manifest decision guide](../../../guides/PLATFORM-AND-MANIFEST-DECISION-GUIDE.md). For code patterns or a minimal independent reference use [the OfficeDev Word samples atlas](../../../guides/OFFICIAL-WORD-SAMPLES-ATLAS.md). If a Mac Word **Add-in Error** blocks all feature tests, follow [the isolated Hello World canary runbook](../../../troubleshooting/OFFICIAL-HELLO-WORLD-CANARY.md), then compare last verified working app version against failing app version under matched conditions. A sample must have its own GUID/HTTPS port and must not include optional telemetry or access real user documents. Do not confuse per-document auto-open with developer add-in persistence.
+
 ## Reusable procedures
 
 Before native QA, follow the [QA and evidence workflow](../../../workflows/QA-AND-EVIDENCE.md) and the matching troubleshooting record. Project-specific sideload paths, fixtures, branch names, and UI walkthroughs belong in a project case guide, not this general skill. Use disposable synthetic documents and never use real user documents as test inputs.
