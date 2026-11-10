@@ -23,6 +23,10 @@ This directory is **portable**: it may be copied to a new standalone repository 
 | Stale preview still active, confirmation fails or runs twice | [Preview and confirmation security](troubleshooting/PREVIEW-CONFIRMATION-SECURITY.md) |
 | Undo/Redo unavailable or multiple history units; ranges miss terminal matches | [Undo, Redo and Range](troubleshooting/UNDO-REDO-RANGE.md) |
 | DOCX imports but styles/table/numbering drift | [DOCX import fidelity](troubleshooting/DOCX-IMPORT-INTEGRITY.md) |
+| Review product design with six-cycle iterative refinement | [Six-cycle product refinement](guides/SIX-CYCLE-PRODUCT-REFINEMENT-2026-11-10.md) |
+| Keep an ordered and testable Scrum product backlog | [Scrum-refined backlog](workflows/SCRUM-REFINED-PRODUCT-BACKLOG.md) |
+| Improve or audit the Word engineering skill | [Six-cycle skill refinement](guides/SIX-CYCLE-SKILL-REFINEMENT-2026-11-10.md) |
+| Find existing Word AI agent patterns and high-quality skill examples | [Ready skills and Office agent ecosystem](guides/READY-SKILLS-AND-OFFICE-AGENT-ECOSYSTEM.md) |
 | Plan ribbon-first Word editing UI with grouped commands | [Ribbon-first architecture](guides/RIBBON-FIRST-WORD-ADDIN-ARCHITECTURE.md) |
 | Evaluate ETKPlus feature inventory, module boundaries and academic roadmap | [ETKPlus capabilities/gaps roadmap](guides/ETKPLUS-CAPABILITIES-GAPS-ROADMAP.md) |
 | Need to choose XML vs unified JSON app package, platform compatibility | [Platform & manifest decision guide](guides/PLATFORM-AND-MANIFEST-DECISION-GUIDE.md) |
