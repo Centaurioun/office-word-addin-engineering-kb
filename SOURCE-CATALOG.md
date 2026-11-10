@@ -2,6 +2,22 @@
 
 **Last checked: 2026-11-10.** Links, not copies. Prioritize official contracts over examples and anecdotes. See [source verification notes](SOURCE-VERIFICATION.md) for direct link/status checks and access limitations. Verify host (Word), platform (Mac), current Word build, API requirement set, last updated date, and issue status before relying on an item.
 
+## Skills, six-cycle review, Scrum refinement and existing Office agents (2026-11-10)
+
+| Source | Use for | Adoption |
+|---|---|---|
+| [Agent Skills specification](https://agentskills.io/specification) | Portable SKILL.md YAML and reference structure | Skill conformity |
+| [OpenAI Build Skills](https://developers.openai.com/plugins/build/skills) | Concise skill scope, progressive disclosure and dependency guidance | Skill engineering |
+| [OpenAI Plugins](https://github.com/openai/plugins) | Current official plugin/skill examples | Prefer over deprecated openai/skills |
+| [Superpowers](https://github.com/obra/superpowers) | Brainstorming, systematic debugging, writing skills, TDD, verification | Process skills if installed |
+| [Scrum Guide 2020](https://scrumguides.org/scrum-guide) | Continuous Product Backlog refinement and Definition of Done | Planning, not an arbitrary fixed six-cycle |
+| [OfficeDev/Office-Developer-Tools](https://github.com/OfficeDev/Office-Developer-Tools) | Office extended prompts | No verified comprehensive Word Codex skill currently |
+| [Office Agents third-party](https://github.com/hewliyang/office-agents) | Word AppAdapter, VFS, local inspection bridge | **Research only**; not production-ready, raw Word execution/AI privacy risk |
+| [Our skill refinement](guides/SIX-CYCLE-SKILL-REFINEMENT-2026-11-10.md) | Audit triggers, portable refs and pressure cases | Revised, runtime behavioral QA pending |
+| [Ready skills review](guides/READY-SKILLS-AND-OFFICE-AGENT-ECOSYSTEM.md) | Select/reject ready components with evidence | Maintained reference |
+| [Six-cycle product decisions](guides/SIX-CYCLE-PRODUCT-REFINEMENT-2026-11-10.md) | Dual-surface architecture; tradeoffs and action order | Proposed only |
+| [Scrum backlog](workflows/SCRUM-REFINED-PRODUCT-BACKLOG.md) | Prioritized PBIs and testable acceptance criteria | Future implementation |
+
 ## Ribbon-first UI, commands, academic integration (2026-11-10)
 
 Read [Ribbon-first architecture](guides/RIBBON-FIRST-WORD-ADDIN-ARCHITECTURE.md) and the [ETKPlus capability roadmap](guides/ETKPLUS-CAPABILITIES-GAPS-ROADMAP.md). These apply beyond a single Add-in Error: navigation, modular code, academic QA, packaging and UX.
