@@ -2,6 +2,28 @@
 
 **Last checked: 2026-11-10.** Links, not copies. Prioritize official contracts over examples and anecdotes. See [source verification notes](SOURCE-VERIFICATION.md) for direct link/status checks and access limitations. Verify host (Word), platform (Mac), current Word build, API requirement set, last updated date, and issue status before relying on an item.
 
+## Ribbon-first UI, commands, academic integration (2026-11-10)
+
+Read [Ribbon-first architecture](guides/RIBBON-FIRST-WORD-ADDIN-ARCHITECTURE.md) and the [ETKPlus capability roadmap](guides/ETKPLUS-CAPABILITIES-GAPS-ROADMAP.md). These apply beyond a single Add-in Error: navigation, modular code, academic QA, packaging and UX.
+
+| Official documentation | When useful | Important constraint |
+|---|---|---|
+| [Add-in commands](https://learn.microsoft.com/en-us/office/dev/add-ins/design/add-in-commands) | Ribbon architecture, groups, menus, custom tab | **One custom core tab per add-in**, one-level menus; can use built-in tabs |
+| [CustomTab schema](https://learn.microsoft.com/en-us/javascript/api/manifest/customtab?view=word-js-preview) | XML custom ribbon tab | Avoid claiming two or three independent custom tabs |
+| [Design navigation patterns](https://learn.microsoft.com/en-us/office/dev/add-ins/design/navigation-patterns) | Distinguish ribbon shortcuts vs focused pane | Deep links may require shared runtime |
+| [Taskpane UX](https://learn.microsoft.com/en-us/office/dev/add-ins/design/task-pane-add-ins) | Replace long scrolling pane with focused navigation | Keep preview/results and complex options in pane |
+| [Ribbon with XML manifest](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/create-addin-commands) | ExecuteFunction vs ShowTaskpane | Preserve stable installed manifest IDs while testing |
+| [Shared runtime](https://learn.microsoft.com/en-us/office/dev/add-ins/excel/configure-your-add-in-to-use-a-shared-runtime) | Shared ribbon/pane state, command dispatch | Additional runtime compatibility / configuration |
+| [Show/hide task pane](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/show-hide-add-in) | Programmatic navigation | **Marketplace unsupported since 2026-02-23** for showAsTaskpane; sideload and central only |
+| [Ribbon enable/disable](https://learn.microsoft.com/en-us/office/dev/add-ins/design/disable-add-in-commands) | Context-dependent buttons | Feature-specific support; restart may be needed |
+| [Show/hide ribbon controls](https://learn.microsoft.com/en-us/office/dev/add-ins/design/show-hide-controls-custom-tab) | Declutter ribbon | RibbonApi 1.3/shared-runtime for dynamic visibility |
+| [Word keyboard shortcuts](https://learn.microsoft.com/en-us/office/dev/add-ins/design/keyboard-shortcuts) | Fast academic checks, accessibility | SharedRuntime 1.1; Word Mac >=16.88; keyboard conflict review |
+| [Persist add-in settings](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/persisting-add-in-state-and-settings) | Remember selected feature route/profile | Word per-document settings vs per-user browser storage; no private text |
+| [Track changes in Word](https://learn.microsoft.com/en-us/office/dev/add-ins/word/manage-tracked-changes) | Academic edit traceability and editorial review | Check Word API availability; do not promise tracked-change editing automatically |
+| [Word citation management](https://learn.microsoft.com/en-us/office/dev/add-ins/word/citation-management) | Reference bibliography and endnotes | Sample is not Zotero/CSL implementation |
+| [Office Dialog API](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/dialog-api-in-office-add-ins) | Sign-in, progress, extra space | Separate runtime; document interaction better in pane |
+| [Ribbon commands sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/word) | Prototype custom tab and Home/Review groups | Use separate QA manifest/worktree |
+
 ## Microsoft Learn platform, manifest and app-package path (expanded 2026-11-10)
 
 **Start with the [platform and manifest decision guide](guides/PLATFORM-AND-MANIFEST-DECISION-GUIDE.md)**; don't conflate the JSON unified app ZIP requirements with the current Word XML taskpane manifest.
