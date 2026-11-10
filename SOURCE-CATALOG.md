@@ -154,3 +154,10 @@ See the [annotated official Word samples atlas](guides/OFFICIAL-WORD-SAMPLES-ATL
 - Arbitrary third-party MCP servers promising "Word editing": editing DOCX in filesystem is not the same as debugging a live Office.js task pane.
 
 **Review cadence:** revisit upstream status before P0 retest and on Word host upgrade; record the issue's latest update and whether it reproduces on our actual build.
+
+## Microsoft 365 Agents Toolkit and VS Code Copilot/Codex harnesses (2026-11-10)
+
+- [Agents Toolkit for Office Add-ins](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/agents-toolkit-overview) **does include Word/Excel/PowerPoint Office Add-in scaffolding**, not only Teams/Copilot agents. Word tool-generated unified JSON manifest route is **preview**, requires the prerelease toolkit extension, and the documented desktop F5 debug flow is Windows-specific.
+- [OfficeDev toolkit Hello World Office Add-in](https://github.com/OfficeDev/microsoft-365-agents-toolkit-samples/tree/main/hello-world-office-addin) contains a unified JSON scaffold, `m365agents.yml`, assets and validation patterns. Useful for isolated architecture comparisons, **not** a replacement for ETK XML Word API/ribbon samples or live Mac Word QA.
+- [VS Code agent skills](https://code.visualstudio.com/docs/agent-customization/agent-skills) describes Copilot `.github/skills`, Codex `.agents/skills` and experimental cross-discovery. Two local mirrors need controlled reconciliation with the central Knowledge Base, not blind overwrite.
+- [Toolkit adoption and harness handoff guide](guides/M365-AGENTS-TOOLKIT-FOR-WORD-ADDINS.md) includes limitations, candidates, privacy and current branch/smoke evidence.
