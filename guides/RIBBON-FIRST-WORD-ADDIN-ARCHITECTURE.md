@@ -2,6 +2,10 @@
 
 **Curated 2026-11-10.** Evidence: actual ETKPlus XML manifest/HTML/TypeScript files on `fix/mac-word-p0-blockers-20261109`; Microsoft Learn Office UI, ribbon commands, navigation, runtimes, manifest, keyboard shortcuts, Word samples. **PROPOSAL / NOT IMPLEMENTED IN WORD.** This page is a reusable product-design/engineering playbook, not a claim that the described functions have passed QA.
 
+## Revision: dual-surface, not immediate ribbon migration (six-cycle review, 2026-11-10)
+
+The user explicitly selected **both ribbon and right-hand taskpane** and asked not to move/remove existing controls until functionality is stable. Treat "Ribbon-first" as the *long-term navigation priority*, **not** as an immediate UI rewrite. Support dropdown `Control xsi:type="Menu"` using Microsoft's Word XML sample, with at most one custom core tab and optional groups on built-in tabs. Preserve every existing feature via an all-tools catalog in the pane. See the [six-cycle reviewed contract](SIX-CYCLE-PRODUCT-REFINEMENT-2026-11-10.md) and [Scrum-refined backlog](../workflows/SCRUM-REFINED-PRODUCT-BACKLOG.md). This addendum supersedes any wording below that implies current pane replacement. No code has been changed or piloted in native Word for this architecture review.
+
 ## Product decision
 
 **Ribbon is the main command surface; task pane is the focused workflow/results surface.** Preserve the existing Office.js document-editing engines, then introduce a shared semantic command registry so that ribbon and taskpane are two adapters to the **same** command. Avoid 60 independent ribbon buttons and duplicate mutation code.
