@@ -23,6 +23,8 @@ This directory is **portable**: it may be copied to a new standalone repository 
 | Stale preview still active, confirmation fails or runs twice | [Preview and confirmation security](troubleshooting/PREVIEW-CONFIRMATION-SECURITY.md) |
 | Undo/Redo unavailable or multiple history units; ranges miss terminal matches | [Undo, Redo and Range](troubleshooting/UNDO-REDO-RANGE.md) |
 | DOCX imports but styles/table/numbering drift | [DOCX import fidelity](troubleshooting/DOCX-IMPORT-INTEGRITY.md) |
+| Plan ribbon-first Word editing UI with grouped commands | [Ribbon-first architecture](guides/RIBBON-FIRST-WORD-ADDIN-ARCHITECTURE.md) |
+| Evaluate ETKPlus feature inventory, module boundaries and academic roadmap | [ETKPlus capabilities/gaps roadmap](guides/ETKPLUS-CAPABILITIES-GAPS-ROADMAP.md) |
 | Need to choose XML vs unified JSON app package, platform compatibility | [Platform & manifest decision guide](guides/PLATFORM-AND-MANIFEST-DECISION-GUIDE.md) |
 | Search Microsoft Word working samples by problem type | [OfficeDev Word samples atlas](guides/OFFICIAL-WORD-SAMPLES-ATLAS.md) |
 | Add-in Error blocks all feature tests; isolate Word host vs application | [Official Hello World canary runbook](troubleshooting/OFFICIAL-HELLO-WORLD-CANARY.md) |
