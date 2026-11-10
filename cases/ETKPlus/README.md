@@ -2,6 +2,18 @@
 
 **Case study, not a reusable application.** Current product repo: [Centaurioun/ETKPlus-TransTools](https://github.com/Centaurioun/ETKPlus-TransTools). Bugfix [PR #5](https://github.com/Centaurioun/ETKPlus-TransTools/pull/5) remains draft and not merged.
 
+## Later 2026-11-10 observations — update to the historical FILE-07 and startup record
+
+**Chronology matters:** the FILE-07 false-stale failure detailed below is a *historical observation*, not the final behavior of every development build.
+
+1. On dev.005, the first read-to-second-read OOXML stabilization and narrow identity metadata normalization permitted confirmation. **The user explicitly approved the Word DOCX append**, then one `MERGE_SENTINEL_03` and a source table were observed. This does not establish full Undo/Redo, save/reopen, all formatting or concurrency safety.
+2. On dev.007, a runtime JS/build-metadata token match was introduced and the preview's second OOXML read was accompanied by a fresh text read. That panel successfully opened during a recorded session and showed a matching runtime build ID. Another session attempting the 45-item smoke survey returned **Add-in Error** and then one retry also failed.
+3. Accordingly, **SMK-01 = FAIL and SMK-02–45 = BLOCKED in that smoke session**, not 44 product feature failures. The test did not re-prove dev.007 runtime version because no taskpane opened. See [Issue #6](https://github.com/Centaurioun/ETKPlus-TransTools/issues/6).
+4. The code delta from last user-observed successful dev.005 (`ff136c3eb30feb7d7ca5c3c295ddf656e24e1400`) to dev.007 code (`90864a9ee1cfc002b292af77e38231509b8327d8`) comprises the build-identity initialization change (`7761c1c85c29d46653c37347e9f604087e9a2e5e`) and OOXML preview read change (`90864a9...`). The failure is **not yet attributed** to either change; sideload/server/host intermittency remains plausible.
+5. Use the official [Word Hello World canary](../../troubleshooting/OFFICIAL-HELLO-WORLD-CANARY.md), [platform and XML manifest guide](../../guides/PLATFORM-AND-MANIFEST-DECISION-GUIDE.md), and [OfficeDev Word examples atlas](../../guides/OFFICIAL-WORD-SAMPLES-ATLAS.md). Do not migrate to unified JSON solely to fix this issue, and do not alter the application worktree as a side effect of knowledge curation.
+
+**Current linked product PR as checked:** [draft PR #5](https://github.com/Centaurioun/ETKPlus-TransTools/pull/5) at `c1787e0f8fae09fa4df7f62864bc8d67aa5e9bf7` (documentation HEAD; last product code remains dev.007). This is a point-in-time reference, not a live branch guarantee.
+
 ## Main events
 
 - Baseline test code `e3bf238fb06775e1eea9b97f494dbb99971ae55d`. Common native `window.confirm` / `prompt` code caused Word task-pane compatibility risk. Replaced by explicit in-pane confirmation on bugfix code rev `14b47fb08ef78adf3a7e3affd24619a3aa5a43ed` with successful PRO-02 real Word observation.
