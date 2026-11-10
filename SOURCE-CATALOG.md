@@ -2,6 +2,42 @@
 
 **Last checked: 2026-11-10.** Links, not copies. Prioritize official contracts over examples and anecdotes. See [source verification notes](SOURCE-VERIFICATION.md) for direct link/status checks and access limitations. Verify host (Word), platform (Mac), current Word build, API requirement set, last updated date, and issue status before relying on an item.
 
+## Microsoft Learn platform, manifest and app-package path (expanded 2026-11-10)
+
+**Start with the [platform and manifest decision guide](guides/PLATFORM-AND-MANIFEST-DECISION-GUIDE.md)**; don't conflate the JSON unified app ZIP requirements with the current Word XML taskpane manifest.
+
+| Topic / symptom | Official source | Decision for ETKPlus |
+|---|---|---|
+| Platform structure, manifest vs HTTPS-hosted app | [Office Add-ins overview](https://learn.microsoft.com/en-us/office/dev/add-ins/overview/office-add-ins) | Essential architecture |
+| JSON app ZIP, manifest and two icons | [App package for Microsoft 365](https://learn.microsoft.com/en-us/office/dev/add-ins/overview/app-package-for-microsoft-365) | **Unified distribution** reference; does not require immediate conversion of XML |
+| XML taskpane manifest | [Add-in only XML manifest](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/xml-manifest-overview) | **Current production/development architecture**; SourceLocation, GUID, ordered XML, VersionOverrides |
+| Unified JSON definition and compatibility | [Unified manifest](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/unified-manifest-overview) | Mac Word/Excel/PPT >=16.103 support; consider only later |
+| XML/JSON translation | [Compare manifest types](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/json-manifest-overview) | Future **planned** migration |
+| Prevent duplicate XML and unified UI | [Manage two manifest variants](https://learn.microsoft.com/en-us/office/dev/add-ins/concepts/duplicate-legacy-metaos-add-ins) | Future deployment; alternates/hide |
+| Startup and Office bridge | [Initialize add-in](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/initialize-add-in) | `Office.onReady()`, confirm Word host before Word.run |
+| Mac XML sideload | [Sideload on Mac](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/sideload-an-office-add-in-on-mac) | Installed `wef` manifest vs source, Home → Add-ins |
+| Mac JS console | [Safari Web Inspector](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/debug-office-add-ins-on-ipad-and-mac) | Requires supported Office installation; verify actual Inspect Element |
+| API platform check | [Office versions and sets](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/office-versions-and-requirement-sets), [Word sets](https://learn.microsoft.com/en-us/office/dev/add-ins/reference/requirement-sets/word-api-requirement-sets) | Check feature support independently |
+| Runtime optional feature gating | [Check API at runtime](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/specify-api-requirements-runtime) | Avoid unsupported event calls |
+| Word editor implementation | [Completed Word tutorial](https://learn.microsoft.com/en-us/office/dev/add-ins/tutorials/word-tutorial) | Range, paragraph, table, image, content control |
+
+## Microsoft Word sample atlas (expanded 2026-11-10)
+
+See the [annotated official Word samples atlas](guides/OFFICIAL-WORD-SAMPLES-ATLAS.md) and [isolated Hello World canary troubleshooting](troubleshooting/OFFICIAL-HELLO-WORLD-CANARY.md).
+
+| Official sample | When it helps | Key limitation |
+|---|---|---|
+| [Word Hello World](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/word-hello-world) | **P0** distinguish Add-in Error/Office.js startup from app-specific failures | Run as separate GUID/port, no copying sample telemetry |
+| [Hello World family](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world) | Cross-host architecture reference | Word cannot run other-host manifests |
+| [Word ribbon commands](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/word) | Ribbon disabled/missing, command JS, taskpane entry | Function-file runtime distinct from taskpane |
+| [Auto-open taskpane](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/auto-open-task-pane) | Open an add-in with a **specific document** | Not a global sideload persistence fix |
+| [Completed Word tutorial](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/word-tutorial) | Smoke test and Word.range/text/table/image fixtures | Native Word validation needed |
+| [Import template](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-import-template) | Compare DOCX import UX/API | Source example replaces document content; ETK appends |
+| [BibTeX citation management](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-citation-management) | Academic citation picker, .bib parsing, endnote API | Not a Zotero/CSL replacement |
+| [Get/edit OOXML](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-get-set-edit-openxml) | Read/structural diagnostic OOXML experiments | Legacy scaffold |
+| [Load/write rich OOXML](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) | Synthetic table/image/field content cases | Prefer modern typed Word APIs where supported |
+| [Label on document open](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-label-on-open) | Later administrator-deployed event design | Listed for Word web/Windows; no Mac sideload event guarantee |
+
 ## Authoritative platform and API documentation
 
 | Resource | Use when | Priority / caveat |
