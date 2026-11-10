@@ -16,6 +16,12 @@ Upon clicking **Add-ins** on Word's ribbon, the initial visible menu can show a 
 4. Verify the real taskpane is open by checking its actual header and **runtime JS-embedded build identity** (e.g., dev.007), *not just that any pane or store page appeared*.
 5. If the expected entry isn't present after waiting and a short recheck, record **LAUNCH_TILE_NOT_FOUND**, screen/AX observation and time elapsed; do not click the purple entry as a fallback, repeatedly open store pages, re-sideload, change manifest GUID, remove cached manifests, or install another add-in. Follow the normal [Mac startup runbook](MAC-SIDELOAD-STARTUP.md).
 
+## Distinguish a disabled tile from a missing tile
+
+In the 2026-11-10 P0 acceptance session, the expected named green-W tile did appear after the menu loaded, but Word exposed it as **disabled**, while the Home "Paneli Aç" ribbon command was absent. This is PRE_ACTIVATION_DISABLED, **not** LAUNCH_TILE_NOT_FOUND. Do not repeatedly click the disabled tile, invoke Marketplace, claim JS build identity, or try blocked feature controls. Follow [Mac startup procedure](MAC-SIDELOAD-STARTUP.md) and [host issue #11](https://github.com/Centaurioun/ETKPlus-TransTools/issues/11).
+
+Historical smoke: **44 COMPLETE / 1 FAIL** (45 cases). Separate deeper acceptance after second batch: **12 PASS / 1 FAIL / 15 BLOCKED / 102 NOT_RUN** (130 cases). These are different matrices.
+
 ## Agent automation contract
 
 - Use **observe → wait → re-observe → identify label/icon → click expected entry → verify pane/build**.
